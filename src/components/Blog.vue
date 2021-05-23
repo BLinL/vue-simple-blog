@@ -2,17 +2,18 @@
   <div class="container">
     <ul class="main" v-for="blog in blogs" :key="blog.title">
       <li>
-        <h1>{{ blog.title }}</h1> 
+        <h3>{{ blog.title }}</h3> 
         <main>
           <section>
             {{ blog.discription }}
           </section>
         </main>
          <!-- Accent-colored raised button with ripple -->
-        <router-link to="/content" class="waves-effect waves-light btn"><i class="material-icons left">visibility</i>read more</router-link>
+        <router-link :to="{name:'blogDeails', params:{slug: blog.title}}">
+         read more
+         </router-link>
       </li>
     </ul>
-    <router-view></router-view>
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
     return {
       blogs: [
         {
-          title: "how to do ..",
+          title: "java入门",
           content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis
           aliquam ipsum sed dignissim. Sed ac accumsan odio. Vivamus tristique
           dignissim neque. Interdum et malesuada fames ac ante ipsum primis in
@@ -31,32 +32,32 @@ export default {
           discription: 'Lorem ipsum dolor sit amet...',
         },
         {
-          title: "how to do1 ..",
+          title: "Node入门 ..",
           content: "",
           discription: "...",
         },
         {
-          title: "how to do2 ..",
+          title: "c++入门到入土..",
           content: "",
           discription: "...",
         },
         {
-          title: "how to do3 ..",
+          title: "python精通",
           content: "",
           discription: "...",
         },
         {
-          title: "how to do1 ..",
+          title: "JAVA EE实战",
           content: "",
           discription: "...",
         },
         {
-          title: "how to do2 ..",
+          title: "webpack入门",
           content: "",
           discription: "...",
         },
         {
-          title: "how to do3 ..",
+          title: "nwjs入门",
           content: "",
           discription: "...",
         }

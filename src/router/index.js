@@ -1,41 +1,43 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// import Home from '@/components/Home'
-import About from '@/components/About'
-import Blog from '@/components/Blog'
-import Contact from '@/components/Contact'
-import Friends from '@/components/Friends'
-import BlogView from '@/components/BlogView'
+import layout from '@/views/layout'
+import blogView from '@/views/BlogView'
+import contact from '@/views/contact'
+import about from '@/views/about'
+import Home from '@/views/home'
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/content',
-      name: 'BlogView',
-      component: BlogView
-    },
-    {
-      path: '/blog',
-      name: 'blog',
-      component: Blog
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: Contact
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About
-    },
-    {
-      path: '/friends',
-      name: 'friends',
-      component: Friends
+      path: '/',
+      name: 'layout',
+      component: layout,
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: Home,
+        },
+        {
+          path: '/blog/:slug',
+          name: 'blogDeails',
+          component: blogView,
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: contact
+        },
+        {
+          path: '/about',
+          name: 'about',
+          component: about
+        },
+      ]
     }
   ]
 })

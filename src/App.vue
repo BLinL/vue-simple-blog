@@ -1,36 +1,11 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
-    <transition name="transitionName">
-      <div class="container">
-        <router-view />
-      </div> 
-    </transition>
-    <Footer></Footer>
+      <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/footer";
 export default {
-  name: "App",
-  components: {
-    Navbar,
-    Footer
-  },
-  data() {
-    return {
-      transitionName: "",
-    };
-  },
-  watch: {
-    $route(to, from) {
-      const toDepth = to.path.split("/").length;
-      const fromDepth = from.path.split("/").length;
-      this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
-    },
-  },
 };
 </script>
 

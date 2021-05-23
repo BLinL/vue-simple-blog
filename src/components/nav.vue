@@ -1,21 +1,20 @@
 <template>
-<div>
   <nav>
     <div class="nav-wrapper">
       <ul class="left hide-on-med-and-down">
         <li style="font-size: 25px">{{ getMood() }}</li>
-        <li><router-link to="/blog">Blog</router-link></li>
+        <li><router-link to="/">Blog</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
         <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/write">Write</router-link></li>
       </ul>
     </div>
   </nav>
-</div>
 </template>
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'nav-bar',
   data () {
     return {
       mood: [

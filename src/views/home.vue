@@ -1,10 +1,12 @@
 <template>
   <div class="hello">
     {{ msg }}
+    <Blog/>
   </div>
 </template>
 
 <script>
+import Blog from '@/components/Blog'
 export default {
   name: 'Home',
   data () {
@@ -13,6 +15,7 @@ export default {
     }
   },
   components: {
+    Blog
   }
 }
 </script>
